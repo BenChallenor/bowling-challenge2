@@ -1,4 +1,0 @@
-function Game() {
-  this.frames = [];
-  
-};

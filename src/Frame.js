@@ -1,11 +1,15 @@
 var Frame = function() {
-
+  this.rolls = [];
 };
 
 Frame.prototype.roll = function(pins) {
-
+  this.rolls.push(pins);
 };
 
 Frame.prototype.score = function() {
-  return 0;
+  var result = 0;
+  for (var i = 0; i < 20; i++) {
+    result += this.rolls[i];
+  }
+  return result;
 };

@@ -17,11 +17,19 @@ describe('Bowling game', function() {
     expect(frame.score()).toBe(20);
   });
 
-  var rollMany = function(pins, rolls) {
-    for (var i = 0; i < 20; i++) {
-      frame.roll(pins);
-    }
-  };
+  it('can roll a spare', function() {
+    frame.roll(5);
+    frame.roll(5);
+    frame.roll(3);
+    rollMany(0, 17);
+    expect(frame.score()).toBe(16);
+  });
+
+var rollMany = function(pins, rolls) {
+  for (var i = 0; i < 20; i++) {
+    frame.roll(pins);
+  }
+};
 
 
 });
